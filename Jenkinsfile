@@ -6,5 +6,10 @@ pipeline{
                 echo "Hello"
             }
         }
+        stage("Build"){
+            steps{
+                mvn clean
+            }
+        }
     }
 }
