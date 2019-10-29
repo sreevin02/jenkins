@@ -8,7 +8,8 @@ pipeline{
         }
         stage("Build"){
             steps{
-                mvn -version
+                sh 'mvn --version'
+                sh 'git --version'
             }
         }
     }
