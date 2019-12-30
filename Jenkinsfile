@@ -10,6 +10,7 @@ pipeline {
       steps {
         sh 'mvn --version'
         sh 'git --version'
+        sh 'java -version'
       }
     }
     stage('deploy') {
