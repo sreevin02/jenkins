@@ -1,5 +1,9 @@
 pipeline {
   agent any
+  tools {
+    jdk 'java8'
+    maven 'maven3.5'
+  }
   stages {
     stage('pull') {
       steps {
@@ -8,8 +12,9 @@ pipeline {
     }
     stage('Build') {
       steps {
-        bat 'mvn -version'
-        bat 'git --version'
+        sh 'mvn -version'
+        sh 'mvn clean'
+        sh 'git --version'
       }
     }
     stage('deploy') {
